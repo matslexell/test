@@ -8,6 +8,7 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    environment: prod # Set the prod environment here
     env:
       PORT: 3000
     steps:
