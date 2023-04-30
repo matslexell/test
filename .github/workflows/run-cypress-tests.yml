@@ -1,34 +1,13 @@
 name: Run cypress tests
 
 on:
-<<<<<<< Updated upstream
-  pull_request:
-    branches:
-      - main
-=======
   push: 
     branches:
       - '**'
->>>>>>> Stashed changes
 
 jobs:
   tests:
     runs-on: ubuntu-latest
-<<<<<<< Updated upstream
-    env:
-      PORT: 3000
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Run npm install # if cache not found
-        run: npm install
-
-      - name: Install global dependencies
-        run: npm install -g ts-node
-
-      - name: Run hello world
-        run: ts-node helloWorld.ts
-=======
     environment: prod
     steps:
       - uses: actions/checkout@v2
@@ -37,4 +16,3 @@ jobs:
         run: echo ${{ secrets.MY_SECRET }} | cut -c 1
       - name: Echo stuff
         run: echo "${{ secrets.MY_SECRET }}" | cut -c 2-
->>>>>>> Stashed changes
