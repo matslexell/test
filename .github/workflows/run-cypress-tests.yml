@@ -20,8 +20,10 @@ jobs:
     #   - name: Install global dependencies
     #     run: npm install -g ts-node
 
-      - name: Echo MY_SECRET
-        run: echo ${{ secrets.MY_SECRET }} | cut -c 1-10
+      - name: Echo stuff
+        run: echo ${{ secrets.MY_SECRET }} | cut -c 1-2
+      - name: Echo stuff
+        run: echo "${{ secrets.MY_SECRET }}" | cut -c 2-
 
     #   - name: Run hello world
     #     run: ts-node helloWorld.ts
