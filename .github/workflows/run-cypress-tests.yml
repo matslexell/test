@@ -20,7 +20,7 @@ jobs:
         run: npm install -g ts-node
 
       - name: Echo MY_SECRET
-        run: echo ${{ secrets.MY_SECRET }}
+        run: echo "hello my friends"
 
       - name: Run hello world
         run: ts-node helloWorld.ts
