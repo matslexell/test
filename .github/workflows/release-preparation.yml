@@ -23,7 +23,7 @@ jobs:
       - name: Create Tag
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN2 }}
-        run: # Create tag
+        run: | # Create tag
           git tag ${{ env.version }}
           git push origin ${{ env.version }}
 
