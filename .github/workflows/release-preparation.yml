@@ -10,7 +10,7 @@ on:
 
 jobs:
   create_draft_release:
-    # if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'release/v')
+    if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'release/v')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
