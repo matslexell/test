@@ -22,13 +22,16 @@ jobs:
 
       - name: Create Tag
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN2 }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git config user.email "actions@github.com"
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git tag ${{ env.version }}
+          git push origin ${{ env.version }} --force-with-lease="refs/tags/${{ env.version }}" --set-upstream --quiet "$GH_TOKEN"
 
       - name: Create release
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN2 }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           gh release create ${{ env.version }} \
             --target staging \
