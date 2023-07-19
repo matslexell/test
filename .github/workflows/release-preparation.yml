@@ -22,12 +22,12 @@ jobs:
         id: get_version
         run: echo "version=v$(echo $(cat package.json) | jq -r .version)" >> $GITHUB_ENV
 
-      - name: Create Tag
-        run: | 
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
-          git tag ${{ env.version }}
-          git push origin ${{ env.version }}
+      # - name: Create Tag
+      #   run: | 
+      #     git config --global user.email "action@github.com"
+      #     git config --global user.name "GitHub Action"
+      #     git tag ${{ env.version }}
+      #     git push origin ${{ env.version }}
       
       - name: Create release
         env:
