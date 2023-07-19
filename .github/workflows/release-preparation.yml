@@ -20,6 +20,13 @@ jobs:
         id: get_version
         run: echo "version=v$(echo $(cat package.json) | jq -r .version)" >> $GITHUB_ENV
 
+      - name: Create Tag
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git tag ${{ env.version }}
+          git push origin ${{ env.version }}
+
       - name: Create release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
