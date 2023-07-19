@@ -1,8 +1,10 @@
 {
+  "version": "1.0.0-beta",
   "scripts": {
     "main": "ts-node src/main.ts",
     "start": "npx webpack-dev-server --open --hot",
-    "build": "npx webpack"
+    "build": "npx webpack",
+    "create-release": "python3 scripts/create_release.py"
   },
   "dependencies": {
     "axios": "^1.2.0",
