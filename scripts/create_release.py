@@ -115,7 +115,7 @@ subprocess.run(['git', 'commit', '-m', f'`Chore` release {new_version}']) # Does
 run(f'git push -u origin release/v{new_version}')
 
 # Open the releases page on the GitHub repository
-webbrowser.open('https://github.com/coly-technologies/coly-me/releases/')
+webbrowser.open('https://github.com/matslexell/test/releases/')
 
 # # Open the page to create a new pull request for the new release branch
-webbrowser.open(f'https://github.com/coly-technologies/coly-me/pull/new/release/v{new_version}')
+webbrowser.open(f'https://github.com/matslexell/test/pull/new/release/v{new_version}')
