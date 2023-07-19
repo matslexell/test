@@ -27,7 +27,7 @@ jobs:
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
           git tag ${{ env.version }}
-          git push https://${{ env.GH_TOKEN2 }}@github.com/matslexell/test --tags
+          git push origin ${{ env.version }}
       
       - name: Create release
         env:
